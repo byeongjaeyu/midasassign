@@ -1,0 +1,145 @@
+.award_title {
+    margin:30px 350px 0px 350px;
+    padding:20px 15px 9px 15px;
+}
+
+.award_title div h3{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;  
+    letter-spacing: -0.02em;   
+    color: #24388D;
+}
+
+.award_title div h3 img{
+    width:8px;
+    height:16px;
+}
+
+.award_title div h5{
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: -0.04em;  
+    color: rgba(20, 24, 44, 0.9);
+    margin-top:8px;
+    
+}
+
+
+.award_container {
+    display: flex;
+    justify-content: center;
+    background-color: #F5F5F5;
+    margin-top: 25px;
+    padding:20px 350px 25px 350px;
+}
+
+.awards {
+    display: flex;
+    flex-direction: column;
+}
+
+.award {
+    display: flex;
+    position: relative;
+}
+
+.award_year {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    color: #24388D;
+    border-right: 1px solid lightgray;
+    position:relative;
+    padding-right: 15px;
+}
+
+.container {
+    margin:3px 0px 33px 7.5px;
+}
+.award_content {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.award_content_date {
+    font-size: 13px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: #0F0F0F;
+}
+
+.award_content_title {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: #0F0F0F;
+    width:565px;
+    height:17px;
+    margin-left: 10px;
+}
+
+.award_content_scroll {
+    width:14px;
+    height:7px;
+    margin-left: 27px;
+}
+
+.award_detail {
+    display: none;
+    margin-left: 23px;
+    margin-top:15px;
+}
+
+.block {
+    display: block;
+}
+
+.award_detail > p{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: #0F0F0F;
+    margin-top: 10px;
+}
+
+.detail_date {
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+    height:14px;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+}
+
+.detail_date_date {
+    margin-left:5px;
+    color:#223c87;
+}
+
+
+.detail_date_title {
+    background-color: #223c87;
+    display:inline;
+    margin-bottom:0px;
+    color:white;
+    border-radius: 40px;
+    padding:3px 6px;
+}
+
+.dot{
+    position:absolute;
+    left:58.5px;
+    top:10px;
+}
+
+
+
+

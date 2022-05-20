@@ -1,0 +1,257 @@
+.title {
+    margin:30px 350px 0px 350px;
+    padding:20px 15px 9px 15px;
+}
+
+.title div h3{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;  
+    letter-spacing: -0.02em;   
+    color: #24388D;
+}
+
+.title div h3 img{
+    width:8px;
+    height:16px;
+}
+
+.title div h5{
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: -0.04em;  
+    color: rgba(20, 24, 44, 0.9);
+    margin-top:8px;
+    
+}
+
+.container{
+    margin:9px 350px 0px 350px;
+    padding:15px;
+}
+
+.searchbar_container{
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    height:26px;
+}
+
+.select_box {
+    position:relative;
+    width:80px;
+    height:26px;
+    background-color: #F5F5F5;
+    border: 1px solid #C8CDE2;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:3px 9px 2px 6px;
+}
+
+.select_dropdown{
+    position:absolute;
+    top:32px;
+    left:0px;
+    display: none;
+    width:100px;
+    height:43px;
+    padding-top:3px;
+    background: #F5F5F5;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+}
+
+.block{
+    display: block;
+}
+
+.select_mode {
+    width:85px;
+    height:20px;
+    background-color: #F5F5F5;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    padding:1px 0px 1px 15px;
+}
+
+.select_mode:hover {
+    background-color: #223c87;
+    color:white;
+}
+
+.select_btn {
+    color: #24388D;
+}
+
+.search_input_div {
+    width: 355px;
+    height: 26px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding:3px 9px 0px 6px;
+    border-bottom: 0.5px solid #0F0F0F;
+    margin-left:5px;
+}
+
+.search_input {
+    width:100%;
+    border:none;
+    outline: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+}
+
+.search_icon {
+    font-size: 20px;
+}
+
+.news_container {
+    min-width: 700px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top:22px;
+}
+
+.news_column {
+    border-top: 1px solid #223c87;
+    border-bottom: 1px solid #223c87;
+    height:21px;
+}
+
+.news_column > th {
+    color:#24388D;
+    font-weight: 700;
+    text-align: center;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    padding:6px 0px 7px 0px;
+}
+
+
+.news_column :nth-child(1){
+    width : 46px;
+}
+.news_column :nth-child(2){
+    width : 579px;
+}
+.news_column :nth-child(3){
+    width : 85px;
+}
+
+.news_container_body tr{
+    height:90px;
+}
+
+.news_contents{
+    display: flex;
+    align-items: center;
+    padding-top:15px;
+}
+
+.news_order, .news_date {
+    padding-top:15px;
+    color:#24388D;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    vertical-align: top;;
+}
+
+.news_contents img{
+    margin-right:5px;
+    height:100%;
+}
+
+.news_title {
+    text-align: left;
+    color : #24388D;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.news_content {
+    margin-top: 5px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color:#878787;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.no_data{
+    text-align: center;
+    margin-top: 20px;
+    display:none;
+}
+
+.block{
+    display:block;
+}
+
+.pages_div {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.page_arrow {
+    cursor: pointer;
+    background:none;
+    border:none;
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+}
+
+.page_arrow:disabled {
+    cursor:default;
+}
+
+.pages {
+    display: flex;
+    justify-content: center;
+}
+
+.pagenode {
+    padding:5px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+}
+
+table {
+    border-collapse: collapse;
+    border-top: 2px solid #24388D;
+    padding:10px;
+}
+
+tr {
+    border-bottom: 2px solid #919BC6;
+}
+
+th {
+    margin-left:10px;
+}

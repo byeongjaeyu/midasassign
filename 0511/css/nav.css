@@ -1,0 +1,36 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid #F5F5F5;
+    height:50px;
+    padding: 0 350px;
+}
+
+
+.nav-title img{
+    height:13.29px;
+}
+
+.nav-items {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-item {
+    margin:auto 0px auto 8px;
+    color:#223c87;
+    font-weight: 400;
+    font-size:15px;
+}
+
+.nav-item-activated {
+    margin:auto 0px auto 8px;
+    color:#223c87;
+    font-weight: 700;
+}
+
+.nav-link{
+    text-decoration: none;
+    color:#223c87;
+}

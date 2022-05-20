@@ -1,0 +1,124 @@
+.onmodal{
+    overflow: hidden;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.drinks-container{
+    margin: 30px auto auto auto;
+    display: grid;
+    gap:20px;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 373px 373px;
+    grid-template-columns: 359px 359px;
+}
+
+.grid-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #F5F5F5;
+    width:359px;
+    height:373px;
+    cursor: pointer;
+}
+
+.grid-item img{
+    width:204px;
+    height:293px;
+}
+
+.drink-title{
+    text-align: center;
+    font-family: 'SpoqaHanSans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #0F0F0F;
+}
+
+
+.gototop{
+    position:fixed;
+    right:30px;
+    bottom:30px;
+}
+
+.modal-outer{
+    position:fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: none;
+    width:100%;
+    height:100%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.modal{
+    position:fixed;
+    left:calc(50% - 359px / 2);
+    top:calc(50% - 373px / 2);
+    width:359px;
+    height:373px;
+    border: 1px solid #CCCCCC;
+    background: rgba(255, 255, 255);
+    padding:30px 20px 20px 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.block{
+    display: flex;
+}
+
+.modal-exit{
+    position:absolute;
+    right:16px;
+    top:16px;
+    border:none;
+    background: none;
+    padding:0px;
+
+}
+
+.modal-head * {
+    margin-top:10px;
+    font-size: 18px;
+}
+
+.modal-head-divider{
+    border-bottom: 2px solid #0F0F0F;
+}
+
+.modal .modal-title-en{
+    color: #616161;
+    font-size: 14px;
+}
+
+.modal-footer{
+    display: flex;
+}
+
+.modal-footer * {
+    font-size: 13px;
+    line-height: 13px;
+    margin:5px auto auto auto;
+}
+
+.modal-footer-divider{
+    border-right: 1px solid #000000;
+    height:100%;
+}

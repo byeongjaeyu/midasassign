@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이디야 | 뉴스</title>
+    <!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/news.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <nav class="navbar">
+        <nav-title class="nav-title">
+            <a href="./home.html">
+                <img src="../image/ediyalogo.gif">
+            </a>
+        </nav-title>
+        <ul class="nav-items">
+            <li class="nav-item">
+                <a class="nav-link" href="#">이디야 디자인</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">로그인</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">회원가입</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./beverage.html">이디야 음료</a>
+            </li>
+            <li class="nav-item-activated">
+                <a class="nav-link" href="./award.html">이디야 뉴스</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">매장찾기</a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="menu">
+        <li class="menu-item">
+            공지사항
+        </li>
+        <li class="menu-item-activated">
+            언론 속 이디야
+        </li>
+        <li class="menu-item">
+            홍보영상
+        </li>
+        <li class="menu-item">
+            <a href="./award.html">
+                수상내역
+            </a>
+        </li>
+    </ul>
+    <div class="title">
+        <div>
+            <h3>
+                <img src="../image/slash.svg"/>
+                언론 속 이디야
+            </h3>
+            <h5>이디야의 소식을 전해드립니다.</h5>
+        </div>  
+    </div>
+    <div class="container">
+        <div class="searchbar_container">
+            <div class="select_box" id="select_box">
+                <span id="select_mode">제목</span>
+                <span id="select_btn">▼</span>
+                <div class="select_dropdown" id="select_dropdown">
+                    <div class="select_mode" id="mode1">제목</div>
+                    <div class="select_mode" id="mode2">내용</div>
+                </div>
+            </div>
+            <div class="search_input_div">
+                <input type="text" class="search_input" id="search_input">
+                <span class="search_icon" id="search_icon">
+                    <img src="../image/search.svg"/>
+                </span>
+            </div>
+        </div>
+        <table class="news_container" id="news_container">
+            <thead>
+                <tr class="news_column">
+                    <th>순서</th>
+                    <th>본문</th>
+                    <th>날짜</th>
+                </tr>
+            </thead>
+            <tbody class="news_container_body" id="news_container_body">
+                
+            </tbody>
+        </table>
+        <h1 class="no_data" id="no_data">No Data</h1>
+        <div class="pages_div">
+            <button class="page_arrow" id="page_arrow_down">
+                <img src="../image/newsButtonPrev.svg"/>
+            </button>   
+            
+            <div class="pages" id="pages">
+
+            </div>
+            <button class="page_arrow" id="page_arrow_up">
+                <img src="../image/newsButtonNext.svg"/>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="../js/news.js"></script>
+
+</body>
+</html>
