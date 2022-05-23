@@ -5,19 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이디야 | 음료</title>
-    <!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="../css/reset.css">
+    <!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/beverage.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-title">
-            <a href="./home.html">
-                <img src="../image/ediyalogo.gif">
-            </a>
-            
-        </div>
+
+        <a class="nav-title" href="./home.html">
+            <img src="../image/ediyalogo.gif">
+        </a>
+
         <ul class="nav-items">
             <li class="nav-item">
                 <a class="nav-link">이디야 디자인</a>
@@ -60,29 +59,36 @@
 
             <div class="modal-footer">
                 <div class="modal-footer-detail-left">
-                    <div class="modal-footer-detail" >칼로리</div>
-                    <div class="modal-footer-detail" >당류</div>
-                    <div class="modal-footer-detail" >단백질</div>
+                    <div class="modal-footer-detail-left-title">
+                        <div class="modal-footer-detail" >칼로리</div>
+                        <div class="modal-footer-detail" >당류</div>
+                        <div class="modal-footer-detail" >단백질</div>
+                    </div>
+                    <div class="modal-footer-detail-left-val">
+                        <div class="modal-footer-detail" id="cal"></div>
+                        <div class="modal-footer-detail" id="sugar"></div>
+                        <div class="modal-footer-detail" id="protein"></div>
+                    </div>
                 </div>
-                <div class="modal-footer-detail-left-val">
-                    <div class="modal-footer-detail" id="cal"></div>
-                    <div class="modal-footer-detail" id="sugar"></div>
-                    <div class="modal-footer-detail" id="protein"></div>
-                </div>
-                <div class="modal-footer-divider"></div>
                 <div class="modal-footer-detail-right">
-                    <div class="modal-footer-detail">포화지방</div>
-                    <div class="modal-footer-detail">나트륨</div>
-                    <div class="modal-footer-detail">카페인</div>
-                </div>
-                <div class="modal-footer-detail-right-val">
-                    <div class="modal-footer-detail" id="fat"></div>
-                    <div class="modal-footer-detail" id="na"></div>
-                    <div class="modal-footer-detail" id="caffeine"></div>
+                    <div class="modal-footer-detail-right-title">
+                        <div class="modal-footer-detail">포화지방</div>
+                        <div class="modal-footer-detail">나트륨</div>
+                        <div class="modal-footer-detail">카페인</div>
+                    </div>
+                    <div class="modal-footer-detail-right-val">
+                        <div class="modal-footer-detail" id="fat"></div>
+                        <div class="modal-footer-detail" id="na"></div>
+                        <div class="modal-footer-detail" id="caffeine"></div>
+                    </div>
                 </div>
             </div>
 
         </div>
+    </div>
+
+    <div class="onload-outer block" id="onload-outer">
+        <div class="onload-ring"></div>
     </div>
 
     <img class="gototop" id="gototop" src="../image/GoToTop.png"/>
