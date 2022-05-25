@@ -137,6 +137,7 @@
     font-size: 15px;
     line-height: 100%;
     color:#FEFEFE;
+    cursor: pointer;
 }
 
 .notice-button-list {
@@ -206,6 +207,10 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+.notice-content-title, .notice-content-content {
+    cursor: pointer;
 }
 
 .news{

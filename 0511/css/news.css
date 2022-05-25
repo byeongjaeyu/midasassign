@@ -53,7 +53,7 @@
 
 .select_dropdown{
     position:absolute;
-    top:32px;
+    top:35px;
     left:0px;
     display: none;
     width:100px;
@@ -76,14 +76,29 @@
     font-size: 12px;
     line-height: 18px;
     padding:1px 0px 1px 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .select_mode:hover {
     background-color: #223c87;
+    font-size: 12px;
     color:white;
 }
 
+.select_mode::before {
+    content:url('../image/check.svg');
+    width:7px;
+    height:5px;
+    position:absolute;
+    left:5px;
+    top:1px;
+}
+
 .select_btn {
+    display: flex;
+    align-items: center;
     color: #24388D;
 }
 
@@ -203,7 +218,10 @@
 .no_data{
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 20px;
     display:none;
+    font-size: 40px;
+    font-weight: 700;
 }
 
 .block{
@@ -240,6 +258,16 @@
     font-size: 12px;
     line-height: 100%;
     letter-spacing: -0.04em;
+}
+
+.pagenode-current {
+    padding:5px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+    color:'#24388D';
 }
 
 table {

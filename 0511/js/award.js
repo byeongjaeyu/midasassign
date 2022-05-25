@@ -1,4 +1,6 @@
 {
+    // 한번 누르면 나오게 수정.
+
     const json = {
         data : [
             {
@@ -62,8 +64,7 @@
     const award_container = document.getElementById("awards");
     let now_year;
 
-    //document fragment
-    //이미지 포맷 웹에서
+
 
     const createYear = (container) => {
         let box = `
@@ -84,9 +85,16 @@
     }
 
 
-    awards.forEach(function(award,index){
-        console.log(index);
-        var date = award.date.split('.');
+    awards.forEach(function(award){
+        //구조분해 할당 사용(하면 좋은점?)
+        console.log(award);
+        let {date:date, content:content} = award;
+        // console.log(date, content)
+        let {date:day, title, description, filepath} = content;
+        // console.log(day)
+        date = date.replace(/,/g,'.')
+        // console.log(date)
+        date = date.split('.');
         var current = false;
         if(!now_year || now_year!==date[0]){
             now_year = date[0];
@@ -98,10 +106,10 @@
             <div class="container">
                 <div class="award_content">
                     <p class="award_content_date">
-                        ${award.content.date}
+                        ${date[1]}
                     </p>
                     <p class="award_content_title">
-                        ${award.content.title}
+                        ${title}
                     </p>
                     <img 
                         class="award_content_scroll" 
@@ -114,19 +122,19 @@
 
                 <div class="award_detail" id="award_detail">
                     <img
-                        src=${award.content.filepath}
+                        src=${filepath}
                         width="auto"
                         height="100px"
                     />
                     <p>
-                        ${award.content.description}
+                        ${description}
                     </p>
                     <div class="detail_date">
                         <p class="detail_date_title">
                             수상일
                         </p>
                         <p class="detail_date_date">
-                            ${award.date + '.' + award.content.date}
+                            ${date[0] + '.' + date[1] + '.' + day}
                         </p>
                     </div>
                 </div>
@@ -141,11 +149,10 @@
         }
     })
 
-
+    //araay를 참조하지 않는 반복문이기 떄문에 여기서는 for문을 사용.
     for (let i = 0; i < awards.length; i++) {
         let detail = document.querySelectorAll("#award_detail")[i];
         let scroll = document.querySelectorAll("#award_content_scroll")[i];
-        console.log(scroll, detail)
         scroll.addEventListener("click", () => {
             if(detail.classList.contains("block")){
                 detail.classList.remove("block")

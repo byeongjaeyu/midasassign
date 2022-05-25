@@ -8,6 +8,7 @@
     const gotoTop = document.getElementById("gototop");
 
     const modal = document.getElementById("modal");
+    //modal켜졌을 시, 전체를 감싸는 요소(잡플렉스 참조)
     const modalOuter = document.getElementById("modal-outer");
     const modalExit = document.getElementById("modal-exit");
     const modalTitleKr = document.getElementById("modal-title-kr");
@@ -20,8 +21,10 @@
     const na = document.getElementById("na");
     const caffeine = document.getElementById("caffeine");
     const body = document.querySelector("body");
+    //load시 전체를 감싸는 요소
     const loadOuter = document.getElementById("onload-outer");
 
+    //modal, scroll-request시 loading추가
     const showLoading = () => {
         loadOuter.className += " block";
         body.className + " onload";
@@ -85,7 +88,6 @@
                         size:size,
                     },
                 }).then(res=>{
-                    console.log('스크롤로딩');
                     setDrink(res.data.drink)
                     currentIndex = res.data.paging.currentIndex;
                     lastIndex = res.data.paging.lastIndex;

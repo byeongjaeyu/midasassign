@@ -1,0 +1,27 @@
+.title {
+    margin:30px 350px 0px 350px;
+    padding:20px 15px 9px 15px;
+}
+
+.title div h3{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;  
+    letter-spacing: -0.02em;   
+    color: #24388D;
+}
+
+.title div h3 img{
+    width:8px;
+    height:16px;
+}
+
+.title div h5{
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: -0.04em;  
+    color: rgba(20, 24, 44, 0.9);
+    margin-top:8px;
+    
+}

@@ -50,13 +50,14 @@
     axios.get('http://localhost:6120/api/intro/').then(res=>{
         let iframediv = document.getElementById("iframe");
         let code = res.data;
+        //replace 사용
         code = code.replace('https://youtu.be/','https://www.youtube.com/embed/');
         iframediv.innerHTML=`
         <iframe src=${code} class="home-content-left-youtube"/>
         `
     })
 
-    let newss = [];
+    let newsList = [];
 
     axios.get('http://localhost:6120/api/article/articles/',{
         params:{
@@ -65,16 +66,17 @@
             currentPage:1,
         },
     }).then(res=>{
-        newss = res.data.articles;
+        newsList = res.data.articles;
         setNews()
     })
 
     const setNews = () => {
         let newsContainer = document.getElementById("news-content");
-        newss = newss.slice(0,2);
-        newss.forEach(
+        let newsFragment = "";
+        newsList = newsList.slice(0,2);
+        newsList.forEach(
             function(news){
-                newsContainer.innerHTML += `
+                newsFragment += `
                     <div class="news-content-news">
                         <span>
                             ${news.title}
@@ -85,6 +87,7 @@
                     </div>
                 `
             }
-        )
+        );
+        newsContainer.innerHTML = newsFragment;
     }
 }

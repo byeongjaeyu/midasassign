@@ -17,32 +17,37 @@
     const newsContainerBody = document.getElementById("news_container_body");
     const noData = document.getElementById("no_data");
 
+
+    //기존 show함수 show, hide로 세분화
     selectBox.addEventListener("click",()=>{
-        show()
+        let classList = selectDropdown.classList;
+        if(classList.contains("block")){
+            hide()
+        }else{
+            show()
+        }
     })
 
     document.addEventListener("click",(e)=>{
         if(selectDropdown.classList.contains("block") && !e.target.id.includes("select")){
-            show()
+            hide()
         }
     })
 
     mode1Btn.addEventListener("click",()=>{
         mode = 'title';
         selectMode.innerHTML = "제목"
-        show()
+        hide()
     })
 
     mode2Btn.addEventListener("click",()=>{
         mode = 'content';
         selectMode.innerHTML = "내용"
-        show()
+        hide()
     })
 
     searchIcon.addEventListener("click",()=>{
-        if(searchInput.value!==""){
-            search()
-        }
+        search()
     })
     searchInput.addEventListener("keydown",(e)=>{
         if(e.keyCode===13){
@@ -51,12 +56,13 @@
     })
 
     const show = () => {
-        let classList = selectDropdown.classList;
-        if(classList.contains("block")){
-            selectDropdown.classList.remove("block");
-        }else{
-            selectDropdown.className += " block";
-        }
+        selectDropdown.className += " block";
+        selectBtn.innerHTML = "▲"
+    }
+
+    const hide = () => {
+        selectDropdown.classList.remove("block");
+        selectBtn.innerHTML = "▼"
     }
 
     const search = () => {
@@ -95,7 +101,7 @@
                 blockSize:1,
                 currentPage:"1",
                 lastPage:1
-            });
+            },true);
         }else{
             noData.classList.remove("block");
         }
@@ -111,6 +117,7 @@
                 currentPage:page,
             },
         },).then((res)=>{
+            //매개변수로 변경
             setNews(res.data.articles)
             setPage(res.data.paging)
         })
@@ -142,8 +149,9 @@
         )
     }
 
-    const setPage = (paging) => {
+    const setPage = (paging,error) => {
         let pagesDiv = document.getElementById("pages");
+        //documentfragment로 dom접근 최소화
         let pageFragment = new DocumentFragment()
         let pageStart = parseInt(Number(paging.currentPage-1)/(paging.blockSize)) * (paging.blockSize) + 1;
         pagesDiv.innerHTML="";
@@ -152,15 +160,18 @@
                 break;
             }
             let page = document.createElement("span");
-            page.className=`pagenode`;
+            
+            //클래스-css 스타일로 바꿈.
             if(i === currentPage){
-                //여기해야함.
-                page.style.fontWeight = '700';
-                page.style.color = '#24388D'
-                console.log(i,'now!!');
+                page.className='pagenode-current';
+            }else{
+                page.className=`pagenode`;
             }
+
             page.addEventListener("click",()=>{
-                loadPage(i);
+                if(!error){
+                    loadPage(i);
+                }
             })
             page.innerHTML=i;
             pageFragment.appendChild(page);

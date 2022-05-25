@@ -1,6 +1,7 @@
 .menu {
     display: flex;
     justify-content: center;
+    width: calc(117.41px * 4);
     margin:52.17px 480px 0px 480px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
