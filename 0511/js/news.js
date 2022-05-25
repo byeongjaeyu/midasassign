@@ -50,7 +50,7 @@
         search()
     })
     searchInput.addEventListener("keydown",(e)=>{
-        if(e.keyCode===13){
+        if(e.code==="Enter" || e.code==="NumpadEnter"){
             search(searchInput.value);
         }
     })

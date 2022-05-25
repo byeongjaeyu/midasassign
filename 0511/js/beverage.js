@@ -16,13 +16,15 @@
     const modalDescription = document.getElementById("modal-head-description");
     const cal = document.getElementById("cal");
     const sugar = document.getElementById("sugar");
-    const protein = document.getElementById("protein");
+    const prot = document.getElementById("protein");
     const fat = document.getElementById("fat");
     const na = document.getElementById("na");
-    const caffeine = document.getElementById("caffeine");
+    const caff = document.getElementById("caffeine");
     const body = document.querySelector("body");
     //load시 전체를 감싸는 요소
     const loadOuter = document.getElementById("onload-outer");
+
+    let drinkElement;
 
     //modal, scroll-request시 loading추가
     const showLoading = () => {
@@ -73,7 +75,7 @@
         closeModal()
     })
 
-    window.addEventListener("scroll",()=>{
+    document.addEventListener("scroll",()=>{
         if((window.innerHeight + window.scrollY) >= document.body.offsetHeight*0.99) {
             if(currentIndex+1>=lastIndex){
                 return
@@ -96,60 +98,89 @@
         }
     })
 
-    document.addEventListener("click",(e)=>{
-        if(!modal.classList.contains("block") && e.target.classList.contains("drink")){
-            showLoading();
-            axios.get('http://localhost:6120/api/drink/detail/',{
-                    params:{
-                        sn:Number(e.target.id),
-                    },
-                }).then(res=>{
-                    writeModal(res.data.detail);
-                })
-        }
+    // document.addEventListener("click",(e)=>{
+    //     if(!modal.classList.contains("block") && e.target.classList.contains("drink")){
+    //         showLoading();
+    //         axios.get('http://localhost:6120/api/drink/detail/',{
+    //                 params:{
+    //                     sn:Number(e.target.id),
+    //                 },
+    //             }).then(res=>{
+    //                 console.log(res.data.detail);
+    //                 writeModal(res.data.detail);
+    //             })
+    //     }
 
-        if(modal.classList.contains("block") && !modal.contains(e.target)){
-            closeModal();
-        }
-    })
+    //     if(modal.classList.contains("block") && !modal.contains(e.target)){
+    //         closeModal();
+    //     }
+    // })
 
 
-    const writeModal = (data) => {
-        modalTitleKr.textContent = data.title;
-        modalTitleEn.textContent = data.englishTitle;
-        modalDescription.textContent = data.description;
-        cal.textContent = `(${data.calorie}kcal)`;
-        sugar.textContent = `(${data.sugars}g)`;
-        protein.textContent = `(${data.protein}g)`;
-        fat.textContent = `(${data.saturatedFat}g)`;
-        na.textContent = `(${data.natrium}mg)`;
-        caffeine.textContent = `(${data.caffeine}mg)`;
+    const writeModal = ({title, englishTitle, description, calorie, sugars, protein, saturatedFat, natrium, caffeine}) => {
+        modalTitleKr.textContent = title;
+        modalTitleEn.textContent = englishTitle;
+        modalDescription.textContent = description;
+        cal.textContent = `(${calorie}kcal)`;
+        sugar.textContent = `(${sugars}g)`;
+        prot.textContent = `(${protein}g)`;
+        fat.textContent = `(${saturatedFat}g)`;
+        na.textContent = `(${natrium}mg)`;
+        caff.textContent = `(${caffeine}mg)`;
         showModal();
     }
 
 
 
     const setDrink = (drinks) => {
-        let drinksHtml = ''
+        let drinksFragment = new DocumentFragment();
+        //documentFragment 사용
+        //innerHTML사용 안한 이유, 이벤트가 사라지더라고요 새로 다 만드나봐요
+        //return값 없으므로 foreach사용.
         drinks.forEach(
             function(drink){
-                drinksHtml += `
-                    <div class="drink grid-item" id=${currentIndex}>
-                        <img class="drink img" id=${currentIndex} src=${drink.imgSrc}>
-                        <div class="drink drink-title" id=${currentIndex}>${drink.title}</div>
-                    </div>
-                `;
+                let gridItem = document.createElement("div");
+                gridItem.className="drink grid-item";
+                gridItem.id=`${currentIndex}`;
+                let drinkImg = new Image();
+                drinkImg.className="drink img";
+                drinkImg.id = `${currentIndex}`;
+                drinkImg.src = `${drink.imgSrc}`;
+                let drinkTitle = document.createElement("div");
+                drinkTitle.className="drink drink-title";
+                drinkTitle.id=`${currentIndex}`;
+                drinkTitle.innerHTML=`${drink.title}`;
+                gridItem.appendChild(drinkImg);
+                gridItem.appendChild(drinkTitle);
+                drinksFragment.appendChild(gridItem);
                 currentIndex += 1;
             }
         )
-        container.innerHTML += drinksHtml;
+        container.appendChild(drinksFragment);
+        //dom접근 최소화
+        setEvent(drinks.length)
         closeLoading();
         loading = false;
     }
 
-    // const setEvent = () => {
-    //     console.log(document.querySelectorAll(".grid-item"));
-    // }
+    const setEvent = (size) => {
+        for (let id = currentIndex - 1; id !== currentIndex - 1 - size; id--){
+            drinkElement = document.getElementById(id);
+            drinkElement.addEventListener("click",()=>{
+                console.log(id);
+                showLoading();
+                axios.get('http://localhost:6120/api/drink/detail/',{
+                        params:{
+                            sn:Number(id),
+                        },
+                    }).then(res=>{
+                        console.log(res.data)
+                        writeModal(res.data.detail);
+                    })
+            })
+            
+        }
+    }
 
 
 }
