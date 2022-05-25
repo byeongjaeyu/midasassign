@@ -98,23 +98,11 @@
         }
     })
 
-    // document.addEventListener("click",(e)=>{
-    //     if(!modal.classList.contains("block") && e.target.classList.contains("drink")){
-    //         showLoading();
-    //         axios.get('http://localhost:6120/api/drink/detail/',{
-    //                 params:{
-    //                     sn:Number(e.target.id),
-    //                 },
-    //             }).then(res=>{
-    //                 console.log(res.data.detail);
-    //                 writeModal(res.data.detail);
-    //             })
-    //     }
-
-    //     if(modal.classList.contains("block") && !modal.contains(e.target)){
-    //         closeModal();
-    //     }
-    // })
+    modalOuter.addEventListener("click",(e)=>{
+        if(modal.classList.contains("block") && !modal.contains(e.target)){
+            closeModal();
+        }
+    })
 
 
     const writeModal = ({title, englishTitle, description, calorie, sugars, protein, saturatedFat, natrium, caffeine}) => {
